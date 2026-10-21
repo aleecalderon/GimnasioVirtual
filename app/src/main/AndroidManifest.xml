@@ -10,17 +10,26 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GimnasioVirtual">
+        android:theme="@style/Theme.GimnasioVirtual"
+        tools:targetApi="31">
+
+        <!-- MainActivity queda secundaria -->
+        <activity android:name=".MainActivity" android:exported="false" />
+
+        <!-- RutinasActivity pasa a ser LA PANTALLA INICIAL -->
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".routines.RutinasActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".routines.DetalleRutinaActivity" android:exported="false" />
+        <activity android:name=".routines.EntrenamientoActivity" android:exported="false" />
+        <activity android:name=".routines.EntrenamientoCompletadoActivity" android:exported="false" />
+
     </application>
 
 </manifest>
