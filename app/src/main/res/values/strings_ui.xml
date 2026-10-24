@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ui_saludo">Hola, Usuario</string>
+    <string name="ui_listo_entrenar">¿Listo para entrenar?</string>
+    <string name="ui_rutina_recomendada">Rutina recomendada</string>
+    <string name="ui_comenzar">COMENZAR</string>
+    <string name="ui_que_quieres_hacer">¿Qué quieres hacer?</string>
+    <string name="ui_inicio">Inicio</string>
+    <string name="ui_rutinas">Rutinas</string>
+    <string name="ui_progreso">Progreso</string>
+    <string name="ui_perfil">Perfil</string>
+</resources>

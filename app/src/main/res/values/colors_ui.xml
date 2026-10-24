@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ui_fondo">#B8B4AB</color>
+    <color name="ui_tarjeta">#DADADA</color>
+    <color name="ui_vino">#3A1F1F</color>
+    <color name="ui_barra">#E4E4E4</color>
+</resources>
