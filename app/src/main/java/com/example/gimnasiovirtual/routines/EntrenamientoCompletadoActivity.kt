@@ -1,3 +1,4 @@
+
 package com.example.gimnasiovirtual.routines
 
 import android.content.Intent
@@ -11,18 +12,33 @@ class EntrenamientoCompletadoActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityEntrenamientoCompletadoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Recibir el tiempo total enviado desde el cronómetro
-        val tiempoTotal = intent.getStringExtra("EXTRA_TIEMPO_TOTAL") ?: "00:00"
-        binding.tvTiempoFinal.text = "Tiempo Total: $tiempoTotal"
+        val tiempoTotal =
+            intent.getStringExtra("EXTRA_TIEMPO_TOTAL") ?: "00:00"
 
-        // Botón para volver al menú principal de Rutinas
+        val tituloRutina =
+            intent.getStringExtra("EXTRA_RUTINA_TITULO") ?: "Fuerza y Cardio"
+
+        val ejerciciosCompletados =
+            intent.getIntExtra("EXTRA_EJERCICIOS_COMPLETADOS", 0)
+
+        val totalEjercicios =
+            intent.getIntExtra("EXTRA_TOTAL_EJERCICIOS", 4)
+
+        binding.tvTituloRutinaFinal.text = tituloRutina
+        binding.tvTiempoFinal.text = tiempoTotal
+        binding.tvEjerciciosFinal.text =
+            "$ejerciciosCompletados de $totalEjercicios ejercicios recorridos"
+
         binding.btnVolverInicio.setOnClickListener {
             val intent = Intent(this, RutinasActivity::class.java).apply {
-                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or
+                        Intent.FLAG_ACTIVITY_NEW_TASK
             }
+
             startActivity(intent)
             finish()
         }
